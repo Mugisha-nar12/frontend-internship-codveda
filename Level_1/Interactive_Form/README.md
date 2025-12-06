@@ -5,6 +5,7 @@ This project is a simple, interactive web form that provides real-time validatio
 ## How It Works
 
 The form includes fields for Name, Email, Phone Number, and Password. As you fill out each field, the form provides instant feedback:
+
 - A **green border** and a "Valid input" message appear when the data is entered correctly.
 - A **red border** and an error message appear if the input is incorrect.
 
@@ -17,6 +18,7 @@ The functionality of this form is divided into three files: `index.html`, `style
 ### 1. HTML Structure (`index.html`)
 
 The HTML file provides the basic structure of the form. Each input field is grouped in a `div` with the class `form-group` and includes:
+
 - A `label` for accessibility.
 - An `input` field for user data.
 - A `span` with the class `error` to display validation messages.
@@ -32,6 +34,7 @@ The HTML file provides the basic structure of the form. Each input field is grou
 ### 2. Styling (`style.css`)
 
 The CSS file styles the form to be clean and user-friendly. Key features include:
+
 - A modern color scheme and centered layout.
 - Consistent width for all input fields and the submit button.
 - Visual feedback styles for valid and invalid inputs:
@@ -60,9 +63,10 @@ input.invalid {
 
 This is the core of the interactive validation. The script listens for `input` events on each form field, allowing it to check the data in real-time.
 
-#### Key Functions:
+#### Key Functions
 
 - **`setValidationState(input, isValid, message)`**: This function is central to the visual feedback. It takes an input field, a boolean (`isValid`), and a message. Based on whether the input is valid, it:
+
   - Adds or removes the `valid` and `invalid` classes to change the border color.
   - Sets the error message text and color.
 
