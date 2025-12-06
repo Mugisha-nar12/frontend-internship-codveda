@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--font awesome icon link-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1>Portfolio</h1>
+        <div class="nav-links">
+          <a href="#about">About Me</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="social-media">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </nav>
+
+      <div class="content">
+        <div class="text-box">
+          <h1>Welcome to My Portfolio</h1>
+          <p>
+            Hi! <span>I'm Mugisha</span>, a passionate developer specializing in
+            <span>front-end development</span>. Explore my projects and get in touch!
+          </p>
+          <a href="#projects" class="btn btn-color" style="color:white;">View Projects</a>
+          <a href="#" class="btn btn-color" style="color:white;">Download CV</a>
+        </div>
+        <div class="image-box">
+          <img src="./images/profile.png" alt="Profile Image" />
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section-->
+    <div id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            I am a front-end developer with a passion for creating beautiful and
+            functional websites. I have experience working with HTML, CSS, and
+            JavaScript. I love turning design concepts into interactive and
+            user-friendly web experiences.
+          </p>
+        </div>
+        <div class="skills">
+          <h3>Skills</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Section-->
+    <div id="projects">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-item">
+          <i class="fa-solid fa-code"></i>
+          <h3>Portfolio Website</h3>
+          <p>
+            A responsive portfolio website built with HTML, CSS, and JavaScript.
+          </p>
+          <a
+            href="https://github.com/yourusername/portfolio-website"
+            target="_blank"
+            class="btn"
+            >View Project</a
+          >
+        </div>
+        <div class="project-item">
+          <i class="fa-solid fa-shopping-cart"></i>
+          <h3>E-commerce Website</h3>
+          <p>
+            An e-commerce website with a user-friendly interface and shopping
+            cart functionality.
+          </p>
+          <a
+            href="https://github.com/yourusername/ecommerce-website"
+            target="_blank"
+            class="btn"
+            >View Project</a
+          >
+        </div>
+        <div class="project-item">
+          <i class="fa-solid fa-blog"></i>
+          <h3>Blog Platform</h3>
+          <p>
+            A blog platform with dynamic content loading and user
+            authentication.
+          </p>
+          <a
+            href="https://github.com/yourusername/blog-platform"
+            target="_blank"
+            class="btn"
+            >View Project</a
+          >
+        </div>
+        <div class="project-item">
+          <i class="fa-solid fa-cloud-sun"></i>
+          <h3>Weather App</h3>
+          <p>
+            A weather application that fetches real-time weather data from an
+            API.
+          </p>
+          <a
+            href="https://github.com/yourusername/weather-app"
+            target="_blank"
+            class="btn"
+            >View Project</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section-->
+    <div id="contact">
+      <div class="contact-info">
+        <h2>Contact Me</h2>
+        <p>
+          If you'd like to get in touch, feel free to reach out via email or
+          follow me on social media!
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:tontomugisha@gmail.com" id="mail">tontomugisha@gmail.com</a>
+        </p>
+        <p><strong>Phone:</strong> (250) 732 340 093</p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <form action="#" method="post">
+           <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+          />
+
+          <input type="email" id="email" name="email" placeholder="Email" required />
+
+          <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>             
+
+    <footer>
+      <div>
+        <h2>Portfolio</h2>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2>Social Media Platform</h2>
+        <ul>
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+        </ul>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
