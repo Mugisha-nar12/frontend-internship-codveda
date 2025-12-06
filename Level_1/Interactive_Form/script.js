@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const validateEmail = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const isValid = emailRegex.test(email.value);
-        setValidationState(email, emailError, isValid, 'Invalid email format.');
+        setValidationState(email, emailError, isValid, 'email must contain with @.');
         return isValid;
     };
 
