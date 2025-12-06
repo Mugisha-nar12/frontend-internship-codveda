@@ -11,56 +11,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordError = document.getElementById('password-error');
     const successMessage = document.getElementById('success-message');
 
-    const validateName = () => {
-        if (name.value.trim() === '') {
-            nameError.textContent = 'Name is required.';
-            nameError.style.display = 'block';
-            return false;
+    const setValidationState = (input, errorElement, isValid, message) => {
+        if (isValid) {
+            input.style.borderColor = 'green';
+            errorElement.textContent = 'Valid input';
+            errorElement.style.color = 'green';
+            errorElement.style.display = 'block';
         } else {
-            nameError.style.display = 'none';
-            return true;
+            input.style.borderColor = 'red';
+            errorElement.textContent = message;
+            errorElement.style.color = 'red';
+            errorElement.style.display = 'block';
         }
+    };
+
+    const validateName = () => {
+        const isValid = name.value.trim() !== '';
+        setValidationState(name, nameError, isValid, 'Name is required.');
+        return isValid;
     };
 
     const validateEmail = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email.value)) {
-            emailError.textContent = 'Invalid email format.';
-            emailError.style.display = 'block';
-            return false;
-        } else {
-            emailError.style.display = 'none';
-            return true;
-        }
+        const isValid = emailRegex.test(email.value);
+        setValidationState(email, emailError, isValid, 'Invalid email format.');
+        return isValid;
     };
 
     const validatePhone = () => {
         const phoneRegex = /^\d{10}$/;
-        if (!phoneRegex.test(phone.value)) {
-            phoneError.textContent = 'Phone number must be 10 digits.';
-            phoneError.style.display = 'block';
-            return false;
-        } else {
-            phoneError.style.display = 'none';
-            return true;
-        }
+        const isValid = phoneRegex.test(phone.value);
+        setValidationState(phone, phoneError, isValid, 'Phone number must be 10 digits.');
+        return isValid;
     };
 
     const validatePassword = () => {
-        if (password.value.length < 8) {
-            passwordError.textContent = 'Password must be at least 8 characters long.';
-            passwordError.style.display = 'block';
-            return false;
-        } else {
-            passwordError.style.display = 'none';
-            return true;
-        }
+        const isValid = password.value.length >= 8;
+        setValidationState(password, passwordError, isValid, 'Password must be at least 8 characters long.');
+        return isValid;
     };
 
-    name.addEventListener('blur', validateName);
-    email.addEventListener('blur', validateEmail);
-    phone.addEventListener('blur', validatePhone);
-    password.addEventListener('blur', validatePassword);
+    name.addEventListener('input', validateName);
+    email.addEventListener('input', validateEmail);
+    phone.addEventListener('input', validatePhone);
+    password.addEventListener('input', validatePassword);
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -72,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isNameValid && isEmailValid && isPhoneValid && isPasswordValid) {
             successMessage.textContent = 'Form submitted successfully!';
             form.reset();
+            [name, email, phone, password].forEach(input => {
+                input.style.borderColor = '#ccc';
+                document.getElementById(`${input.id}-error`).style.display = 'none';
+            });
         } else {
             successMessage.textContent = '';
         }
