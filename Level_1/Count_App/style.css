@@ -1,0 +1,41 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+div {
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.counter {
+    margin-top: 2em;
+}
+
+#count {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+button {
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+button:hover {
+    background-color: #eee;
+}
