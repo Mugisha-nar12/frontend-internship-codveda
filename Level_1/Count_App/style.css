@@ -14,6 +14,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
 
 h1 {
@@ -54,8 +56,24 @@ button {
 
 #reset {
     width: calc(100% - 1em);
+    background-color: #ff4545;
+    color: azure;
 }
 
 button:hover {
     background-color: #eee;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #count {
+        font-size: 4em;
+    }
+
+    button {
+        font-size: 1.2em;
+    }
 }
