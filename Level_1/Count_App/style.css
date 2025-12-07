@@ -65,15 +65,20 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .card {
+        padding: 1.5em 1em;
+    }
+
     h1 {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     #count {
-        font-size: 4em;
+        font-size: 4.5em;
     }
 
     button {
-        font-size: 1.2em;
+        font-size: 1.3em;
+        padding: 0.8em 1em;
     }
 }
