@@ -1,0 +1,222 @@
+export const facilities = [
+    {
+        id: 1,
+        name: "Polyclinique La Medicale",
+        address: "KG 7 Avenue, Kimihurura",
+        city: "Kigali",
+        district: "Gasabo",
+        province: "Kigali City",
+        type: "Clinic",
+        latitude: -1.9441,
+        longitude: 30.0821
+    },
+    {
+        id: 2,
+        name: "Butare District Health Center",
+        address: "RN1 Road, Tumba",
+        city: "Huye",
+        district: "Huye",
+        province: "Southern Province",
+        type: "Clinic",
+        latitude: -2.5959,
+        longitude: 29.7390
+    },
+    {
+        id: 3,
+        name: "Rwamagana Health Center",
+        address: "Karenge Sector",
+        city: "Rwamagana",
+        district: "Rwamagana",
+        province: "Eastern Province",
+        type: "Clinic",
+        latitude: -1.95,
+        longitude: 30.4299
+    },
+    {
+        id: 4,
+        name: "Gisenyi Health Clinic",
+        address: "Lake Kivu Avenue",
+        city: "Rubavu",
+        district: "Rubavu",
+        province: "Western Province",
+        type: "Clinic",
+        latitude: -1.6681,
+        longitude: 29.2561
+    },
+    {
+        id: 5,
+        name: "Volcanoes Health Center",
+        address: "Kinigi Sector",
+        city: "Musanze",
+        district: "Musanze",
+        province: "Northern Province",
+        type: "Clinic",
+        latitude: -1.5036,
+        longitude: 29.6343
+    },
+    {
+        id: 6,
+        name: "Muhima Health Center",
+        address: "Boulevard de Nyabugogo",
+        city: "Kigali",
+        district: "Nyarugenge",
+        province: "Kigali City",
+        type: "Clinic",
+        latitude: -1.965,
+        longitude: 30.052
+    },
+    {
+        id: 7,
+        name: "Kabutare Health Center",
+        address: "Ngoma District",
+        city: "Huye",
+        district: "Ngoma",
+        province: "Southern Province",
+        type: "Clinic",
+        latitude: -2.605,
+        longitude: 29.75
+    },
+    {
+        id: 8,
+        name: "King Faisal Hospital",
+        address: "KG 544 Street, Kacyiru",
+        city: "Kigali",
+        district: "Gasabo",
+        province: "Kigali City",
+        type: "Hospital",
+        latitude: -1.9445,
+        longitude: 30.095
+    },
+    {
+        id: 9,
+        name: "University Teaching Hospital of Butare (CHUB)",
+        address: "Avenue de l'Université",
+        city: "Huye",
+        district: "Huye",
+        province: "Southern Province",
+        type: "Hospital",
+        latitude: -2.607,
+        longitude: 29.747
+    },
+    {
+        id: 10,
+        name: "Rwamagana District Hospital",
+        address: "RN3 Highway",
+        city: "Rwamagana",
+        district: "Rwamagana",
+        province: "Eastern Province",
+        type: "Hospital",
+        latitude: -1.948,
+        longitude: 30.439
+    },
+    {
+        id: 11,
+        name: "Rubavu District Hospital",
+        address: "Beach Road, Gisenyi",
+        city: "Rubavu",
+        district: "Rubavu",
+        province: "Western Province",
+        type: "Hospital",
+        latitude: -1.67,
+        longitude: 29.2565
+    },
+    {
+        id: 12,
+        name: "Musanze District Hospital",
+        address: "RN4 Road, Ruhengeri",
+        city: "Musanze",
+        district: "Musanze",
+        province: "Northern Province",
+        type: "Hospital",
+        latitude: -1.503,
+        longitude: 29.631
+    },
+    {
+        id: 13,
+        name: "Kibagabaga District Hospital",
+        address: "KG 16 Avenue, Gasabo",
+        city: "Kigali",
+        district: "Gasabo",
+        province: "Kigali City",
+        type: "Hospital",
+        latitude: -1.944,
+        longitude: 30.12
+    },
+    {
+        id: 14,
+        name: "Rwanda Military Hospital",
+        address: "KG 7 Avenue, Kanombe",
+        city: "Kigali",
+        district: "Kicukiro",
+        province: "Kigali City",
+        type: "Hospital",
+        latitude: -1.97,
+        longitude: 30.104
+    },
+    {
+        id: 15,
+        name: "Kigali City Vaccination Center",
+        address: "KN 3 Avenue, Nyarugenge",
+        city: "Kigali",
+        district: "Nyarugenge",
+        province: "Kigali City",
+        type: "Vaccination Center",
+        latitude: -1.9505,
+        longitude: 30.058
+    },
+    {
+        id: 16,
+        name: "Huye Vaccination Hub",
+        address: "Butare Town Center",
+        city: "Huye",
+        district: "Huye",
+        province: "Southern Province",
+        type: "Vaccination Center",
+        latitude: -2.5965,
+        longitude: 29.7475
+    },
+    {
+        id: 17,
+        name: "Eastern Province Vaccination Center",
+        address: "Rwamagana Town Square",
+        city: "Rwamagana",
+        district: "Rwamagana",
+        province: "Eastern Province",
+        type: "Vaccination Center",
+        latitude: -1.9475,
+        longitude: 30.4315
+    },
+    {
+        id: 18,
+        name: "Rubavu Border Vaccination Site",
+        address: "Grande Barrière",
+        city: "Rubavu",
+        district: "Rubavu",
+        province: "Western Province",
+        type: "Vaccination Center",
+        latitude: -1.669,
+        longitude: 29.258
+    },
+    {
+        id: 19,
+        name: "Musanze Vaccination Center",
+        address: "Musanze Town Center",
+        city: "Musanze",
+        district: "Musanze",
+        province: "Northern Province",
+        type: "Vaccination Center",
+        latitude: -1.5035,
+        longitude: 29.6335
+    },
+    {
+        id: 20,
+        name: "Nyarugenge Vaccination Center",
+        address: "KN 2 Road, City Center",
+        city: "Kigali",
+        district: "Nyarugenge",
+        province: "Kigali City",
+        type: "Vaccination Center",
+        latitude: -1.9508,
+        longitude: 30.0575
+    }
+];
