@@ -75,12 +75,19 @@ const Contact = () => {
       <main className="container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="lg:col-span-2">
-            <h1 className="text-3xl font-bold mb-4">Contact & Support</h1>
+            <h1 className="text-3xl font-bold mb-4 text-black">
+              Contact & Support
+            </h1>
 
             <section className="mb-6">
               <h2 className="text-xl font-semibold mb-3 flex items-center space-x-2">
-                <FontAwesomeIcon icon={faQuestionCircle} />
-                <span>Frequently Asked Questions</span>
+                <FontAwesomeIcon
+                  icon={faQuestionCircle}
+                  className="text-blue-950"
+                />
+                <span className="text-gray-900">
+                  Frequently Asked Questions
+                </span>
               </h2>
               <div className="bg-white rounded-lg shadow-sm divide-y">
                 {FAQ_ITEM.map((f, i) => (
@@ -103,7 +110,9 @@ const Contact = () => {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold mb-3">Send us a message</h2>
+              <h2 className="text-xl font-semibold mb-3 text-blue-900">
+                Send us a message
+              </h2>
               <div className="bg-white rounded-lg shadow-sm p-6">
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -112,14 +121,14 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="border px-4 py-2 rounded-md w-full"
+                      className="border px-4 py-2 rounded-md w-full text-gray-800"
                     />
                     <input
                       name="email"
                       value={form.email}
                       onChange={handleChange}
                       placeholder="Your email"
-                      className="border px-4 py-2 rounded-md w-full"
+                      className="border px-4 py-2 rounded-md w-full text-gray-800"
                     />
                   </div>
                   <textarea
@@ -127,7 +136,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="How can we help?"
-                    className="border mt-4 px-4 py-2 rounded-md w-full min-h-[140px]"
+                    className="border mt-4 px-4 py-2 rounded-md w-full min-h-[140px] text-gray-800"
                   />
                   <div className="mt-4 flex items-center space-x-3">
                     <button
@@ -156,17 +165,23 @@ const Contact = () => {
 
           <div>
             <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-              <h3 className="text-lg font-semibold mb-2">Contact Info</h3>
+              <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                Contact Info
+              </h3>
               <div className="text-gray-600 text-sm space-y-2">
                 <div className="flex items-center gap-2">
-                  <FontAwesomeIcon icon={faPhone} /> <span>Emergency: 912</span>
+                  <FontAwesomeIcon icon={faPhone} className="text-green-900" />{" "}
+                  <span>Emergency: 912</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <FontAwesomeIcon icon={faPhone} />{" "}
+                  <FontAwesomeIcon icon={faPhone} className="text-green-900" />{" "}
                   <span>Health Info: 114</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <FontAwesomeIcon icon={faMapMarkerAlt} />{" "}
+                  <FontAwesomeIcon
+                    icon={faMapMarkerAlt}
+                    className="text-blue-800"
+                  />{" "}
                   <span>KN 4 Ave, Kigali, Rwanda</span>
                 </div>
                 <div className="mt-3 text-sm text-gray-500">
@@ -184,8 +199,10 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <h3 className="text-lg font-semibold mb-2">Support Hours</h3>
+            <div className="bg-white rounded-xl shadow-md p-6 mb-4">
+              <h3 className="text-lg font-semibold mb-2 text-blue-800">
+                Support Hours
+              </h3>
               <div className="text-gray-600 text-sm">
                 Monday — Friday: 08:00 — 17:00
                 <div className="mt-2">Weekends: Limited support</div>
@@ -193,7 +210,7 @@ const Contact = () => {
             </div>
 
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <h3 className="text-lg font-semibold p-6 pb-2">
+              <h3 className="text-lg font-semibold p-6 pb-2 text-gray-900">
                 Office Location
               </h3>
               <div className="h-64">
