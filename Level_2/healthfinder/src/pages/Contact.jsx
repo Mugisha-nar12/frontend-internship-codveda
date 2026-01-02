@@ -8,6 +8,8 @@ import {
   faPhone,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
 
 const FAQ_ITEM = [
   {
@@ -27,6 +29,8 @@ const FAQ_ITEM = [
     a: "Data is compiled for demo purposes from public sources. For official guidance, please consult the Ministry of Health site linked throughout the app.",
   },
 ];
+
+const OFFICE_LOCATION = [-1.9474, 30.0588]; // Kigali, Rwanda
 
 const Contact = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -185,6 +189,32 @@ const Contact = () => {
               <div className="text-gray-600 text-sm">
                 Monday — Friday: 08:00 — 17:00
                 <div className="mt-2">Weekends: Limited support</div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md overflow-hidden">
+              <h3 className="text-lg font-semibold p-6 pb-2">
+                Office Location
+              </h3>
+              <div className="h-64">
+                <MapContainer
+                  center={OFFICE_LOCATION}
+                  zoom={14}
+                  scrollWheelZoom={false}
+                  style={{ height: "100%", width: "100%" }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="&copy; OpenStreetMap contributors"
+                  />
+                  <Marker position={OFFICE_LOCATION}>
+                    <Popup>
+                      Health Finder Office
+                      <br />
+                      KN 4 Ave, Kigali
+                    </Popup>
+                  </Marker>
+                </MapContainer>
               </div>
             </div>
           </div>

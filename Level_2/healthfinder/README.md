@@ -88,7 +88,7 @@ To get started with HealthFinder, follow these simple steps:
    First, clone the repository to your local machine using the following command:
 
    ```bash
-   git clone https://github.com/Mugisha-nar12/frontend-internship-codveda.git
+   git clone https://github.com/Mugisha-nar12/frontend-internship-codveda.git 
    ```
 
 2. **Navigate to the Project Directory**

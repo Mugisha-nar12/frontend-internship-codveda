@@ -2,17 +2,26 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getDistricts } from "../api/healthService";
+import { getDistricts, getFacilitiesByDistrict } from "../api/healthService";
 
 const DistrictsPage = () => {
-  const [districts, setDistricts] = useState([]);
+  const [districts, setDistricts] = useState({});
+  const [expandedDistrict, setExpandedDistrict] = useState(null);
 
   useEffect(() => {
     (async () => {
-      const list = await getDistricts();
-      setDistricts(list || []);
+      const data = await getFacilitiesByDistrict();
+      setDistricts(data || {});
     })();
   }, []);
+
+  const toggleDistrict = (district) => {
+    if (expandedDistrict === district) {
+      setExpandedDistrict(null);
+    } else {
+      setExpandedDistrict(district);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -22,15 +31,34 @@ const DistrictsPage = () => {
         <p className="text-sm text-gray-600 mb-6">
           Select a district to view available facilities grouped by type.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {districts.map((d) => (
-            <Link
-              key={d}
-              to={`/district/${encodeURIComponent(d)}`}
-              className="block p-4 bg-white rounded-lg shadow hover:shadow-md border border-gray-100"
+
+        <div className="space-y-4">
+          {Object.keys(districts).map((district) => (
+            <div
+              key={district}
+              className="bg-white rounded-lg shadow border border-gray-100"
             >
-              <div className="text-lg font-medium text-gray-800">{d}</div>
-            </Link>
+              <button
+                onClick={() => toggleDistrict(district)}
+                className="w-full text-left p-4 focus:outline-none"
+              >
+                <div className="text-lg font-medium text-gray-800">
+                  {district}
+                </div>
+              </button>
+              {expandedDistrict === district && (
+                <div className="p-4 border-t border-gray-200">
+                  <ul>
+                    {districts[district].map((facility, index) => (
+                      <li key={index} className="mb-2">
+                        <p className="font-semibold">{facility.name}</p>
+                        <p className="text-sm text-gray-600">{facility.type}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </main>

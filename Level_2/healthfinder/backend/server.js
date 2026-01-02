@@ -148,6 +148,52 @@ app.get("/districts/:district/facilities", (req, res) => {
     res.json(grouped);
 });
 
+app.get("/districts/facilities", (req, res) => {
+    const list = readFacilities();
+    const groupedByDistrict = {};
+
+    list.forEach(facility => {
+        const district = facility.district || "Unknown";
+        if (!groupedByDistrict[district]) {
+            groupedByDistrict[district] = [];
+        }
+        groupedByDistrict[district].push({
+            name: facility.name,
+            type: classifyType(facility)
+        });
+    });
+
+    res.json(groupedByDistrict);
+});
+
+// GET /facilities/all/grouped - all facilities grouped by type
+app.get("/facilities/all/grouped", (req, res) => {
+    const list = readFacilities();
+
+    const categories = [
+        "District Hospital",
+        "Referral Hospital",
+        "Private Hospital",
+        "Public Hospital",
+        "Health Center",
+        "Maternity Center",
+        "Polyclinic",
+        "Vaccination Center",
+        "Other",
+    ];
+
+    const grouped = {};
+    categories.forEach((c) => (grouped[c] = []));
+
+    list.forEach((f) => {
+        const c = classifyType(f) || "Other";
+        if (!grouped[c]) grouped[c] = [];
+        grouped[c].push(f);
+    });
+
+    res.json(grouped);
+});
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`Healthfinder API running on http://localhost:${port}`);

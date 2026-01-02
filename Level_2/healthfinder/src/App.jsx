@@ -8,6 +8,7 @@ import AboutPage from "./pages/About";
 import Privacy from "./pages/Privacy";
 import DistrictsPage from "./pages/DistrictsPage";
 import DistrictPage from "./pages/DistrictPage";
+import AllDistrictsPage from "./pages/AllDistrictsPage";
 import Contact from "./pages/Contact";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/districts" element={<DistrictsPage />} />
         <Route path="/district/:district" element={<DistrictPage />} />
+        <Route path="/all-facilities" element={<AllDistrictsPage />} />
         {/* Define other routes here */}
       </Routes>
     </Router>

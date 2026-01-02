@@ -116,14 +116,25 @@ export const getSectors = async () => {
         const sectors = new Set();
         fallbackFacilities.forEach((f) => {
             const addr = String(f.address || "");
-            const match = addr.match(/([A-Za-z0-9 '\-]+)\s+[Ss]ector/);
+            const match = addr.match(/([A-Za-z0-9 '-]+)\s+[Ss]ector/);
             if (match && match[1]) sectors.add(match[1].trim());
         });
         return Array.from(sectors).sort();
     }
 };
 
-export const getFacilitiesByDistrict = async (district) => {
+export const getFacilitiesByDistrict = async () => {
+    try {
+        const res = await fetch(`${API_BASE}/districts/facilities`);
+        if (!res.ok) throw new Error("Failed to fetch facilities by district");
+        return await res.json();
+    } catch (e) {
+        console.error(e);
+        return null;
+    }
+};
+
+export const getFacilitiesByDistrictName = async (district) => {
     try {
         const url = `${API_BASE}/districts/${encodeURIComponent(district)}/facilities`;
         const res = await fetch(url);
@@ -149,6 +160,38 @@ export const getFacilitiesByDistrict = async (district) => {
         const grouped = {};
         categories.forEach((c) => (grouped[c] = []));
         list.forEach((f) => {
+            const c = classifyTypeLocal(f) || "Other";
+            if (!grouped[c]) grouped[c] = [];
+            grouped[c].push(f);
+        });
+        return grouped;
+    }
+};
+
+export const getAllFacilitiesGrouped = async () => {
+    try {
+        const url = `${API_BASE}/facilities/all/grouped`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Failed to fetch all facilities");
+        const data = await res.json();
+        return data;
+    } catch (e) {
+        console.error(e);
+        // Fallback: group all local data by type
+        const categories = [
+            "District Hospital",
+            "Referral Hospital",
+            "Private Hospital",
+            "Public Hospital",
+            "Health Center",
+            "Maternity Center",
+            "Polyclinic",
+            "Vaccination Center",
+            "Other",
+        ];
+        const grouped = {};
+        categories.forEach((c) => (grouped[c] = []));
+        fallbackFacilities.forEach((f) => {
             const c = classifyTypeLocal(f) || "Other";
             if (!grouped[c]) grouped[c] = [];
             grouped[c].push(f);
