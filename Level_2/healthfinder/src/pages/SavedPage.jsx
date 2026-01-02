@@ -12,12 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const SavedPage = () => {
-  const [saved, setSaved] = useState([]);
+  const [saved, setSaved] = useState(getSavedFacilities());
   const navigate = useNavigate();
-
-  useEffect(() => {
-    setSaved(getSavedFacilities());
-  }, []);
 
   const handleRemove = (id) => {
     removeFacility(id);
@@ -34,14 +30,14 @@ const SavedPage = () => {
               onClick={() => navigate(-1)}
               className="px-3 py-2 bg-white border rounded-md text-gray-700 hover:bg-gray-50 flex items-center"
             >
-              <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
+              <FontAwesomeIcon icon={faArrowLeft} className="mr-2 text-black" />
               Back
             </button>
             <button
               onClick={() => navigate("/")}
               className="px-3 py-2 bg-white border rounded-md text-gray-700 hover:bg-gray-50 flex items-center"
             >
-              <FontAwesomeIcon icon={faHome} className="mr-2" />
+              <FontAwesomeIcon icon={faHome} className="mr-2 text-blue-600" />
               Home
             </button>
             <button
@@ -52,11 +48,11 @@ const SavedPage = () => {
               }
               className="px-3 py-2 bg-white border rounded-md text-gray-700 hover:bg-gray-50 flex items-center"
             >
-              <FontAwesomeIcon icon={faSearch} className="mr-2" />
+              <FontAwesomeIcon icon={faSearch} className="mr-2 text-gray-950" />
               View on Map
             </button>
           </div>
-          <h2 className="text-2xl font-bold">Saved Facilities</h2>
+          <h2 className="text-2xl font-bold text-blue-800">Saved Facilities</h2>
         </div>
 
         {saved.length === 0 ? (

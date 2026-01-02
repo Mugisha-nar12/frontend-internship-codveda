@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getDistricts, getFacilitiesByDistrict } from "../api/healthService";
+import { getFacilitiesByDistrict } from "../api/healthService";
 
 const DistrictsPage = () => {
   const [districts, setDistricts] = useState({});
@@ -27,7 +27,7 @@ const DistrictsPage = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <main className="container mx-auto px-6 py-8">
-        <h2 className="text-2xl font-bold mb-4">Districts</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-800">Districts</h2>
         <p className="text-sm text-gray-600 mb-6">
           Select a district to view available facilities grouped by type.
         </p>
@@ -50,7 +50,7 @@ const DistrictsPage = () => {
                 <div className="p-4 border-t border-gray-200">
                   <ul>
                     {districts[district].map((facility, index) => (
-                      <li key={index} className="mb-2">
+                      <li key={index} className="mb-2 text-blue-700">
                         <p className="font-semibold">{facility.name}</p>
                         <p className="text-sm text-gray-600">{facility.type}</p>
                       </li>

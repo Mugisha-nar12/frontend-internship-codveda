@@ -18,7 +18,7 @@ const FeatureCard = ({ icon, title, children }) => (
         <FontAwesomeIcon icon={icon} className="h-5 w-5" />
       </div>
       <div>
-        <h3 className="text-lg font-semibold">{title}</h3>
+        <h3 className="text-lg font-semibold text-blue-950">{title}</h3>
         <p className="text-gray-600 mt-1 text-sm">{children}</p>
       </div>
     </div>
@@ -85,7 +85,9 @@ const About = () => {
         </section>
 
         <section className="bg-white rounded-xl p-6 shadow-md mb-10">
-          <h2 className="text-2xl font-bold mb-4">How it works</h2>
+          <h2 className="text-2xl font-bold mb-4 text-green-800">
+            How it works
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-700">
             <div className="space-y-2">
               <div className="font-semibold">1. Search</div>
@@ -113,7 +115,9 @@ const About = () => {
 
         <section className="grid md:grid-cols-2 gap-6">
           <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold mb-2">Our Impact</h3>
+            <h3 className="text-xl font-semibold mb-2 text-blue-800">
+              Our Impact
+            </h3>
             <p className="text-gray-600">
               HealthFinder helps citizens locate nearby hospitals, clinics, and
               vaccination centers, provides essential contact and location
@@ -127,7 +131,9 @@ const About = () => {
           </div>
 
           <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-xl font-semibold mb-2">Contact & Support</h3>
+            <h3 className="text-xl font-semibold mb-2 text-blue-800">
+              Contact & Support
+            </h3>
             <p className="text-gray-600">
               For general enquiries contact{" "}
               <a href="mailto:info@healthfinder.rw" className="text-blue-600">

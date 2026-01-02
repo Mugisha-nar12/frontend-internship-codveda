@@ -18,7 +18,9 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faHeart} />
               </div>
               <div>
-                <div className="font-semibold">Rwanda Health Center Finder</div>
+                <div className="font-semibold text-black">
+                  Rwanda Health Center Finder
+                </div>
                 <div className="text-sm text-gray-600">
                   Connecting all Rwandans to quality healthcare services across
                   30+ districts. Free, accessible, and always available.
@@ -28,7 +30,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3">Quick Links</h4>
+            <h4 className="font-semibold mb-3 text-black">Quick Links</h4>
             <ul className="space-y-2 text-sm text-gray-700">
               <li>
                 <Link to="/" className="hover:text-blue-600">
@@ -59,7 +61,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3">Emergency Contacts</h4>
+            <h4 className="font-semibold mb-3 text-black">
+              Emergency Contacts
+            </h4>
             <div className="space-y-3 text-sm text-gray-700">
               <div className="flex items-start">
                 <div className="text-red-600 mr-3 mt-1">

@@ -64,7 +64,7 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search clinic name or service..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
+          className="w-full pl-10 pr-4 py-3 text-gray-900 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
           onKeyDown={(e) => {
             if (e.key === "Enter") handleSubmit(e);
           }}
@@ -78,7 +78,7 @@ const SearchBar = ({ onSearch }) => {
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {cities.map((city) => (
               <option key={city} value={city}>
@@ -94,7 +94,7 @@ const SearchBar = ({ onSearch }) => {
           <select
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-3 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {types.map((type) => (
               <option key={type} value={type}>
